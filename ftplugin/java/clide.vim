@@ -17,3 +17,9 @@ set includeexpr=substitute(v:fname,'\\.','/','g')
 "if(has("cscope") && filereadable("/opt/tags/jdk6/cscope.out") && !cscope_connection(4, "/opt/tags/jdk6/cscope.out", "/opt/tags/jdk6/"))
 "  cs add /opt/tags/jdk6/cscope.out /opt/tags/jdk6
 "endif
+
+" maven autocommands
+au bufreadpost pom.xml compiler pom
+au bufwritepost *.java Accio clide-javac
+au bufwritepost pom.xml Accio clide-pom
+
